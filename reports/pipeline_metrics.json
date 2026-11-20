@@ -1,0 +1,182 @@
+{
+  "status": "VERIFIED",
+  "forecast_best_model": "Ridge_Regression",
+  "forecast_metrics": [
+    {
+      "Model": "Ridge_Regression",
+      "MAE_USD": 1451892.19,
+      "RMSE_USD": 1947842.23,
+      "MAPE_Pct": 4.88,
+      "WAPE_Pct": 4.74,
+      "R2": 0.2933
+    },
+    {
+      "Model": "Gradient_Boosting",
+      "MAE_USD": 1767168.15,
+      "RMSE_USD": 2029713.72,
+      "MAPE_Pct": 5.69,
+      "WAPE_Pct": 5.77,
+      "R2": 0.2327
+    },
+    {
+      "Model": "Random_Forest",
+      "MAE_USD": 2004445.0,
+      "RMSE_USD": 2460081.37,
+      "MAPE_Pct": 6.31,
+      "WAPE_Pct": 6.54,
+      "R2": -0.1272
+    },
+    {
+      "Model": "Seasonal_Naive_Baseline",
+      "MAE_USD": 2181829.17,
+      "RMSE_USD": 2485942.96,
+      "MAPE_Pct": 7.08,
+      "WAPE_Pct": 7.12,
+      "R2": -0.151
+    }
+  ],
+  "fy2027_budget_projection": {
+    "revenue_usd": 406966422.19,
+    "expense_usd": 222024804.06,
+    "noi_usd": 184941618.13
+  },
+  "data_mining_metrics": {
+    "IsolationForest_Unsupervised": {
+      "Precision": 0.8333,
+      "Recall": 0.8333,
+      "F1": 0.8333,
+      "ROC_AUC": 0.988,
+      "PR_AUC": 0.9271
+    },
+    "RandomForest_5FoldCV_Supervised": {
+      "Precision": 1.0,
+      "Recall": 1.0,
+      "F1": 1.0,
+      "ROC_AUC": 1.0,
+      "PR_AUC": 1.0
+    }
+  },
+  "top_risk_terms": [
+    {
+      "term": "invoice",
+      "tfidf_anomaly_lift": 0.4395
+    },
+    {
+      "term": "share",
+      "tfidf_anomaly_lift": 0.2745
+    },
+    {
+      "term": "federal",
+      "tfidf_anomaly_lift": 0.2745
+    }
+  ],
+  "reconciliation": {
+    "detection_accuracy_pct": 100.0,
+    "total_gl_usd": 69113269.97,
+    "total_bank_usd": 64713911.21,
+    "raw_variance_usd": 4399358.76,
+    "post_adjustment_gap_usd": 0.0,
+    "exceptions_by_type": [
+      {
+        "detected_category": "Duplicate_GL_Posting",
+        "item_count": 12,
+        "total_gl_usd": 2989520.88,
+        "total_bank_usd": 1494760.43,
+        "total_abs_variance_usd": 1494760.45
+      },
+      {
+        "detected_category": "Fund_Misclassification",
+        "item_count": 12,
+        "total_gl_usd": 2504159.64,
+        "total_bank_usd": 2504159.64,
+        "total_abs_variance_usd": 0.0
+      },
+      {
+        "detected_category": "Matched",
+        "item_count": 252,
+        "total_gl_usd": 60712048.91,
+        "total_bank_usd": 60712048.91,
+        "total_abs_variance_usd": 0.0
+      },
+      {
+        "detected_category": "Timing_Difference",
+        "item_count": 12,
+        "total_gl_usd": 2907540.54,
+        "total_bank_usd": 0.0,
+        "total_abs_variance_usd": 2907540.54
+      },
+      {
+        "detected_category": "Unrecorded_Bank_Fee",
+        "item_count": 12,
+        "total_gl_usd": 0.0,
+        "total_bank_usd": 2942.23,
+        "total_abs_variance_usd": 2942.2299999999996
+      }
+    ]
+  },
+  "fy2026_enterprise_ratios": {
+    "fiscal_year": 2026,
+    "total_operating_revenue_usd": 382128095.95,
+    "total_operating_expense_usd": 211587717.28,
+    "net_operating_income_usd": 170540378.67,
+    "operating_margin_pct": 44.63,
+    "non_airline_revenue_share_pct": 60.45,
+    "cpe_usd": 11.96,
+    "senior_dscr_x": 2.38,
+    "all_in_dscr_x": 2.119,
+    "days_cash_on_hand": 422.6,
+    "total_enplanements": 12633134
+  },
+  "dscr_monte_carlo": {
+    "iterations": 10000,
+    "covenant_threshold_x": 1.25,
+    "mean_dscr_x": 2.112,
+    "median_dscr_x": 2.137,
+    "std_dscr_x": 0.345,
+    "p05_dscr_x": 1.512,
+    "p25_dscr_x": 1.869,
+    "p75_dscr_x": 2.361,
+    "p95_dscr_x": 2.644,
+    "prob_meet_covenant_pct": 99.55,
+    "prob_breach_covenant_pct": 0.45,
+    "expected_shortfall_p05_usd": 21974831.44
+  },
+  "three_scenarios": [
+    {
+      "Scenario": "Worst_Case",
+      "Probability_Pct": 20.0,
+      "Enplanement_Shock": "-14.0%",
+      "OM_Inflation_Shock": "+9.0%",
+      "Projected_Senior_DSCR_x": 1.635,
+      "Covenant_Status": "Compliant",
+      "Trigger_and_Mitigation": "Airline capacity cut or macro recession -> activate discretionary O&M freeze & PFC debt offset."
+    },
+    {
+      "Scenario": "Base_Case",
+      "Probability_Pct": 55.0,
+      "Enplanement_Shock": "+1.0%",
+      "OM_Inflation_Shock": "+2.0%",
+      "Projected_Senior_DSCR_x": 2.137,
+      "Covenant_Status": "Compliant",
+      "Trigger_and_Mitigation": "Steady Austin metro growth -> maintain CIP phasing and quarterly variance monitoring."
+    },
+    {
+      "Scenario": "Best_Case",
+      "Probability_Pct": 25.0,
+      "Enplanement_Shock": "+7.5%",
+      "OM_Inflation_Shock": "-1.0%",
+      "Projected_Senior_DSCR_x": 2.542,
+      "Covenant_Status": "Strong Headroom",
+      "Trigger_and_Mitigation": "New international routes + parking yield optimization -> accelerate cash-funded CIP equity."
+    }
+  ],
+  "artifacts": {
+    "excel_workbook": "D:\\austin-aviation-financial-analytics\\reports\\AUS_Aviation_Financial_Model_Excel2019.xlsx",
+    "charts": {
+      "forecast": "D:\\austin-aviation-financial-analytics\\reports\\figures\\01_revenue_forecast_comparison.png",
+      "grant_mining": "D:\\austin-aviation-financial-analytics\\reports\\figures\\02_faa_grant_anomaly_mining.png",
+      "dscr_mc": "D:\\austin-aviation-financial-analytics\\reports\\figures\\03_dscr_monte_carlo_scenarios.png",
+      "reconciliation": "D:\\austin-aviation-financial-analytics\\reports\\figures\\04_gl_bank_reconciliation_exceptions.png"
+    }
+  }
+}
